@@ -1,0 +1,12 @@
+*.o
+.DS_Store
+.*.swp
+key-build*
+*.orig
+*.rej
+*~
+.#*
+*#
+.emacs.desktop*
+TAGS*~
+git-src
