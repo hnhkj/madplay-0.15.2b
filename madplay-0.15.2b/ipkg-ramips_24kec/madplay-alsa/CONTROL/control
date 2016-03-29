@@ -1,0 +1,11 @@
+Package: madplay-alsa
+Version: 0.15.2b-4
+Depends: libc, libid3tag, libmad, alsa-lib
+Source: feeds/packages/sound/madplay
+License: GPL-2.0+
+LicenseFiles: COPYING
+Section: sound
+Maintainer: Simon Peter <probono@puredarwin.org>
+Architecture: ramips_24kec
+Installed-Size: 29751
+Description:  MPEG audio player in fixed point - alsa

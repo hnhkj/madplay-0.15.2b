@@ -1,8 +1,5 @@
 /* config.h.in.  Generated from configure.ac by autoheader.  */
 
-/* Define if building universal (internal helper macro) */
-#undef AC_APPLE_UNIVERSAL_BUILD
-
 /* Define to be the name of your default audio output module. */
 #undef AUDIO_DEFAULT
 
@@ -31,34 +28,14 @@
    */
 #undef HAVE_ALLOCA_H
 
-/* Define to 1 if you have the `argz_count' function. */
-#undef HAVE_ARGZ_COUNT
-
 /* Define to 1 if you have the <argz.h> header file. */
 #undef HAVE_ARGZ_H
-
-/* Define to 1 if you have the `argz_next' function. */
-#undef HAVE_ARGZ_NEXT
-
-/* Define to 1 if you have the `argz_stringify' function. */
-#undef HAVE_ARGZ_STRINGIFY
 
 /* Define to 1 if you have the `asprintf' function. */
 #undef HAVE_ASPRINTF
 
 /* Define to 1 if you have the <assert.h> header file. */
 #undef HAVE_ASSERT_H
-
-/* Define to 1 if the compiler understands __builtin_expect. */
-#undef HAVE_BUILTIN_EXPECT
-
-/* Define to 1 if you have the MacOS X function CFLocaleCopyCurrent in the
-   CoreFoundation framework. */
-#undef HAVE_CFLOCALECOPYCURRENT
-
-/* Define to 1 if you have the MacOS X function CFPreferencesCopyAppValue in
-   the CoreFoundation framework. */
-#undef HAVE_CFPREFERENCESCOPYAPPVALUE
 
 /* Define if the GNU dcgettext() function is already present or preinstalled.
    */
@@ -120,13 +97,13 @@
 /* Define to 1 if you have the `getuid' function. */
 #undef HAVE_GETUID
 
-/* Define if you have the iconv() function and it works. */
+/* Define if you have the iconv() function. */
 #undef HAVE_ICONV
 
 /* Define if you have the 'intmax_t' type in <stdint.h> or <inttypes.h>. */
 #undef HAVE_INTMAX_T
 
-/* Define to 1 if you have the <inttypes.h> header file. */
+/* Define if <inttypes.h> exists and doesn't clash with <sys/types.h>. */
 #undef HAVE_INTTYPES_H
 
 /* Define if <inttypes.h> exists, doesn't clash with <sys/types.h>, and
@@ -154,8 +131,14 @@
 /* Define to 1 if you have the `localeconv' function. */
 #undef HAVE_LOCALECONV
 
-/* Define to 1 if the system has the type `long long int'. */
-#undef HAVE_LONG_LONG_INT
+/* Define to 1 if you have the <locale.h> header file. */
+#undef HAVE_LOCALE_H
+
+/* Define if you have the 'long double' type. */
+#undef HAVE_LONG_DOUBLE
+
+/* Define if you have the 'long long' type. */
+#undef HAVE_LONG_LONG
 
 /* Define to 1 if you have the <machine/soundcard.h> header file. */
 #undef HAVE_MACHINE_SOUNDCARD_H
@@ -163,8 +146,8 @@
 /* Define to 1 if you have the `madvise' function. */
 #undef HAVE_MADVISE
 
-/* Define to 1 if you have the `mbrtowc' function. */
-#undef HAVE_MBRTOWC
+/* Define to 1 if you have the <malloc.h> header file. */
+#undef HAVE_MALLOC_H
 
 /* Define to 1 if you have the <memory.h> header file. */
 #undef HAVE_MEMORY_H
@@ -178,8 +161,8 @@
 /* Define to 1 if you have the `munmap' function. */
 #undef HAVE_MUNMAP
 
-/* Define to 1 if you have the `newlocale' function. */
-#undef HAVE_NEWLOCALE
+/* Define to 1 if you have the <nl_types.h> header file. */
+#undef HAVE_NL_TYPES_H
 
 /* Define if your printf() function supports format strings with positions. */
 #undef HAVE_POSIX_PRINTF
@@ -227,9 +210,6 @@
 /* Define to 1 if you have the `strncasecmp' function. */
 #undef HAVE_STRNCASECMP
 
-/* Define to 1 if you have the `strnlen' function. */
-#undef HAVE_STRNLEN
-
 /* Define to 1 if you have the <stropts.h> header file. */
 #undef HAVE_STROPTS_H
 
@@ -260,11 +240,8 @@
 /* Define to 1 if you have the <unistd.h> header file. */
 #undef HAVE_UNISTD_H
 
-/* Define to 1 if the system has the type `unsigned long long int'. */
-#undef HAVE_UNSIGNED_LONG_LONG_INT
-
-/* Define to 1 if you have the `uselocale' function. */
-#undef HAVE_USELOCALE
+/* Define if you have the 'unsigned long long' type. */
+#undef HAVE_UNSIGNED_LONG_LONG
 
 /* Define to 1 if you have the `vprintf' function. */
 #undef HAVE_VPRINTF
@@ -272,17 +249,20 @@
 /* Define if you have the 'wchar_t' type. */
 #undef HAVE_WCHAR_T
 
-/* Define to 1 if you have the `wcrtomb' function. */
-#undef HAVE_WCRTOMB
-
 /* Define to 1 if you have the `wcslen' function. */
 #undef HAVE_WCSLEN
 
-/* Define to 1 if you have the `wcsnlen' function. */
-#undef HAVE_WCSNLEN
-
 /* Define if you have the 'wint_t' type. */
 #undef HAVE_WINT_T
+
+/* Define to 1 if you have the `__argz_count' function. */
+#undef HAVE___ARGZ_COUNT
+
+/* Define to 1 if you have the `__argz_next' function. */
+#undef HAVE___ARGZ_NEXT
+
+/* Define to 1 if you have the `__argz_stringify' function. */
+#undef HAVE___ARGZ_STRINGIFY
 
 /* Define to 1 if you have the `__fsetlocking' function. */
 #undef HAVE___FSETLOCKING
@@ -292,10 +272,6 @@
 
 /* Define if integer division by zero raises signal SIGFPE. */
 #undef INTDIV0_RAISES_SIGFPE
-
-/* Define to the sub-directory in which libtool stores uninstalled libraries.
-   */
-#undef LT_OBJDIR
 
 /* Define to disable debugging assertions. */
 #undef NDEBUG
@@ -315,9 +291,6 @@
 /* Define to the one symbol short name of this package. */
 #undef PACKAGE_TARNAME
 
-/* Define to the home page for this package. */
-#undef PACKAGE_URL
-
 /* Define to the version of this package. */
 #undef PACKAGE_VERSION
 
@@ -330,7 +303,7 @@
 
 /* If using the C implementation of alloca, define if you know the
    direction of stack growth for your system; otherwise it will be
-   automatically deduced at runtime.
+   automatically deduced at run-time.
 	STACK_DIRECTION > 0 => grows toward higher addresses
 	STACK_DIRECTION < 0 => grows toward lower addresses
 	STACK_DIRECTION = 0 => direction of growth unknown */
@@ -345,17 +318,9 @@
 /* Version number of package */
 #undef VERSION
 
-/* Define WORDS_BIGENDIAN to 1 if your processor stores words with the most
-   significant byte first (like Motorola and SPARC, unlike Intel). */
-#if defined AC_APPLE_UNIVERSAL_BUILD
-# if defined __BIG_ENDIAN__
-#  define WORDS_BIGENDIAN 1
-# endif
-#else
-# ifndef WORDS_BIGENDIAN
-#  undef WORDS_BIGENDIAN
-# endif
-#endif
+/* Define to 1 if your processor stores words with the most significant byte
+   first (like Motorola and SPARC, unlike Intel and VAX). */
+#undef WORDS_BIGENDIAN
 
 /* Define to empty if `const' does not conform to ANSI C. */
 #undef const
@@ -366,54 +331,19 @@
 #undef inline
 #endif
 
+/* Define to `long' if <sys/types.h> does not define. */
+#undef off_t
+
 /* Define as the type of the result of subtracting two pointers, if the system
    doesn't define it. */
 #undef ptrdiff_t
 
-/* Define to `unsigned int' if <sys/types.h> does not define. */
+/* Define to empty if the C compiler doesn't support this keyword. */
+#undef signed
+
+/* Define to `unsigned' if <sys/types.h> does not define. */
 #undef size_t
 
 /* Define to unsigned long or unsigned long long if <stdint.h> and
    <inttypes.h> don't define. */
 #undef uintmax_t
-
-
-#define __libc_lock_t                   gl_lock_t
-#define __libc_lock_define              gl_lock_define
-#define __libc_lock_define_initialized  gl_lock_define_initialized
-#define __libc_lock_init                gl_lock_init
-#define __libc_lock_lock                gl_lock_lock
-#define __libc_lock_unlock              gl_lock_unlock
-#define __libc_lock_recursive_t                   gl_recursive_lock_t
-#define __libc_lock_define_recursive              gl_recursive_lock_define
-#define __libc_lock_define_initialized_recursive  gl_recursive_lock_define_initialized
-#define __libc_lock_init_recursive                gl_recursive_lock_init
-#define __libc_lock_lock_recursive                gl_recursive_lock_lock
-#define __libc_lock_unlock_recursive              gl_recursive_lock_unlock
-#define glthread_in_use  libintl_thread_in_use
-#define glthread_lock_init_func     libintl_lock_init_func
-#define glthread_lock_lock_func     libintl_lock_lock_func
-#define glthread_lock_unlock_func   libintl_lock_unlock_func
-#define glthread_lock_destroy_func  libintl_lock_destroy_func
-#define glthread_rwlock_init_multithreaded     libintl_rwlock_init_multithreaded
-#define glthread_rwlock_init_func              libintl_rwlock_init_func
-#define glthread_rwlock_rdlock_multithreaded   libintl_rwlock_rdlock_multithreaded
-#define glthread_rwlock_rdlock_func            libintl_rwlock_rdlock_func
-#define glthread_rwlock_wrlock_multithreaded   libintl_rwlock_wrlock_multithreaded
-#define glthread_rwlock_wrlock_func            libintl_rwlock_wrlock_func
-#define glthread_rwlock_unlock_multithreaded   libintl_rwlock_unlock_multithreaded
-#define glthread_rwlock_unlock_func            libintl_rwlock_unlock_func
-#define glthread_rwlock_destroy_multithreaded  libintl_rwlock_destroy_multithreaded
-#define glthread_rwlock_destroy_func           libintl_rwlock_destroy_func
-#define glthread_recursive_lock_init_multithreaded     libintl_recursive_lock_init_multithreaded
-#define glthread_recursive_lock_init_func              libintl_recursive_lock_init_func
-#define glthread_recursive_lock_lock_multithreaded     libintl_recursive_lock_lock_multithreaded
-#define glthread_recursive_lock_lock_func              libintl_recursive_lock_lock_func
-#define glthread_recursive_lock_unlock_multithreaded   libintl_recursive_lock_unlock_multithreaded
-#define glthread_recursive_lock_unlock_func            libintl_recursive_lock_unlock_func
-#define glthread_recursive_lock_destroy_multithreaded  libintl_recursive_lock_destroy_multithreaded
-#define glthread_recursive_lock_destroy_func           libintl_recursive_lock_destroy_func
-#define glthread_once_func            libintl_once_func
-#define glthread_once_singlethreaded  libintl_once_singlethreaded
-#define glthread_once_multithreaded   libintl_once_multithreaded
-
