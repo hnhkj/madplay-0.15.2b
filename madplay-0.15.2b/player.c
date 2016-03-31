@@ -94,6 +94,8 @@
 
 # define KEY_CTRL(key)	((key) & 0x1f)
 
+#define FIFO_NAME "/tmp/madplayFIFO"
+
 enum {
   KEY_PAUSE    = 'p',
   KEY_STOP     = 's',
@@ -2117,6 +2119,37 @@ int stop_audio(struct player *player, int flush)
 
 # if defined(USE_TTY)
 /*
+ * NAME:readkeyFIFO()
+ * DESCRIPTION: read a keypress from the FIFO
+ */
+static
+int readkeyFIFO(int blocking)
+{
+  unsigned char key;
+  int pipe, res;
+  ssize_t count;
+  // check whether named pipe exists, if not, create it.
+  if(access(FIFO_NAME, F_OK)==-1){
+    res=mkfifo(FIFO_NAME,0777);
+    if(res!=0)
+      exit(EXIT_FAILURE);
+  }
+  if(!blocking){
+    // open a named pipe in nonblocking mode
+    pipe=open(FIFO_NAME,O_RDONLY|O_NONBLOCK);
+    count=read(pipe,&key,1);
+    close(pipe);
+  }
+  else{
+    // open the named pipe in blocking mode when madplay in pause mode.
+    pipe=open(FIFO_NAME,O_RDONLY);
+    count=read(pipe,&key,1);
+    close(pipe);
+  }
+  return (count==1)?key:0;
+}
+
+/*
  * NAME:	readkey()
  * DESCRIPTION:	read a keypress from the keyboard
  */
@@ -2234,7 +2267,7 @@ enum mad_flow tty_filter(void *data, struct mad_frame *frame)
   enum mad_flow flow = MAD_FLOW_CONTINUE;
   int command, stopped = 0;
 
-  command = readkey(0);
+  command = readkeyFIFO(0);  //command = readkey(0);
   if (command == -1)
     return MAD_FLOW_BREAK;
 
@@ -2252,7 +2285,7 @@ enum mad_flow tty_filter(void *data, struct mad_frame *frame)
     stop_audio(player, stopped);
     message(" --%s--", stopped ? _("Stopped") : _("Paused"));
 
-    command = readkey(1);
+    command = readkeyFIFO(1); //command = readkey(1);
 
     message("");
 
